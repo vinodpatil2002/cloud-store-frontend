@@ -63,7 +63,7 @@ export default function Landing() {
             </h1>
             <p className="text-base text-neutral-500 max-w-lg leading-relaxed mb-10">
               Upload, manage, and access your files from anywhere. No friction,
-              no clutter — just your files where you need them.
+              no clutter, just your files where you need them.
             </p>
 
             <div className="flex items-center gap-3">
