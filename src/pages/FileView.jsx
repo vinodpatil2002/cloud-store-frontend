@@ -43,7 +43,7 @@ function FileViewer({ file }) {
   if (category === 'doc') {
     return (
       <iframe
-        src={`https://docs.google.com/viewer?url=${encodeURIComponent(file.url)}&embedded=true`}
+        src={`https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(file.url)}`}
         title={file.originalName}
         className="w-full rounded border border-neutral-800"
         style={{ height: 'calc(100vh - 220px)', minWidth: 'min(780px, 100%)' }}

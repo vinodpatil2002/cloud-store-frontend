@@ -62,7 +62,7 @@ function ModalContent({ file, onClose }) {
     }
 
     if (category === 'doc') {
-      const viewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(file.url)}&embedded=true`
+      const viewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(file.url)}`
       return (
         <iframe
           src={viewerUrl}
