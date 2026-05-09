@@ -42,12 +42,25 @@ function FileViewer({ file }) {
 
   if (category === 'doc') {
     return (
-      <iframe
-        src={`https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(file.url)}`}
-        title={file.originalName}
-        className="w-full rounded border border-neutral-800"
-        style={{ height: 'calc(100vh - 220px)', minWidth: 'min(780px, 100%)' }}
-      />
+      <div className="flex flex-col items-center justify-center gap-5 py-16 px-12 border border-neutral-800 rounded-lg bg-[#171717]">
+        <div className="w-14 h-14 border border-neutral-700 rounded-lg flex items-center justify-center bg-neutral-800">
+          <FileText size={26} strokeWidth={1} className="text-neutral-400" />
+        </div>
+        <div className="text-center">
+          <p className="text-sm font-medium text-[#FAFAFA] mb-1">{file.originalName}</p>
+          <p className="text-xs text-neutral-500">Word Document — browser preview not supported</p>
+        </div>
+        <a
+          href={file.url}
+          download={file.originalName}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-sm font-medium text-[#0F0F0F] bg-[#FAFAFA] hover:bg-[#E8E8E8] transition-colors duration-150 px-5 py-2 rounded"
+        >
+          <ExternalLink size={13} strokeWidth={1.5} />
+          Download file
+        </a>
+      </div>
     )
   }
 

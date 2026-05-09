@@ -62,14 +62,26 @@ function ModalContent({ file, onClose }) {
     }
 
     if (category === 'doc') {
-      const viewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(file.url)}`
       return (
-        <iframe
-          src={viewerUrl}
-          title={file.originalName}
-          className="w-full rounded border border-neutral-700"
-          style={{ height: 'calc(90vh - 80px)', minWidth: 'min(720px, 90vw)' }}
-        />
+        <div className="flex flex-col items-center justify-center gap-5 py-16 px-16 bg-[#171717] border border-neutral-800 rounded-lg" style={{ minWidth: 'min(380px, 88vw)' }}>
+          <div className="w-14 h-14 border border-neutral-700 rounded-lg flex items-center justify-center bg-neutral-800">
+            <FileText size={26} strokeWidth={1} className="text-neutral-400" />
+          </div>
+          <div className="text-center">
+            <p className="text-sm font-medium text-[#FAFAFA] mb-1">{file.originalName}</p>
+            <p className="text-xs text-neutral-500">Word Document — browser preview not supported</p>
+          </div>
+          <a
+            href={file.url}
+            download={file.originalName}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm font-medium text-[#0F0F0F] bg-[#FAFAFA] hover:bg-[#E8E8E8] transition-colors duration-150 px-5 py-2 rounded"
+          >
+            <ExternalLink size={13} strokeWidth={1.5} />
+            Download file
+          </a>
+        </div>
       )
     }
 
